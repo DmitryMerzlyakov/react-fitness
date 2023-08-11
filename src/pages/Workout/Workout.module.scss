@@ -1,0 +1,43 @@
+.wrapper {
+    background-color: var(--background-color-allPage);
+    padding: 30px 150px 30px 150px;
+    height: 100%;
+    display: flex;
+    gap: 75px;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+
+    &__title {
+        color: var(--colot-text);
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    &__description {
+        color: var(--colot-text);
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    &__video {
+        width: 100%;
+        height: 639px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 94px;
+}

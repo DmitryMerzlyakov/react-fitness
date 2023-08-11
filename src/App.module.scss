@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "StratosSkyeng";
+    src:
+        local("StratosSkyeng"),
+        url("../src/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+        url("../src/fonts/stratosskyengweb-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --color-text: #FFFFFF;
+    --background-color-button: #580EA2;
+    --background-color-button-active: #271A58;
+    --background-color-button-hover: #3F007D;
+    --background-color-startPage: #271A58;
+    --background-color-allPage: #FAFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    font-family: "StratosSkyeng", sans-serif;
+}

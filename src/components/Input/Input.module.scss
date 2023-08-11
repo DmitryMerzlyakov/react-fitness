@@ -1,0 +1,20 @@
+.input {
+    background-color: var(--background-color-allPage);
+    width: 240px;
+    height: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #D0CECE;
+    margin: 20px 1px;
+    padding-left: 1px;
+    padding-bottom: 5px;
+    outline: none;
+
+    &::placeholder {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.05px;
+        color: #D0CECE;
+    }
+}

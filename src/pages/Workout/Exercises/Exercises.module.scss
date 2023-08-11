@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    color: var(--colot-text);
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.exercises {
+    color: var(--colot-text);
+    font-size: 24px;
+    line-height: 32px;
+    margin-left: 20px;
+
+    &__list {
+        font-size: 24px
+    }
+}

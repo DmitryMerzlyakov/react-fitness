@@ -1,0 +1,38 @@
+.registration {
+    width: 366px;
+    height: 439px;
+    border-radius: 12px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+
+    &__image {
+        margin-top: 38px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        &_error {
+            color: #ff0000;
+        }
+    }
+}
+
+.input {
+    width: 278px;
+    height: 32px;
+    background-color: #FFF;
+    padding-left: 13px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.05px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #D0CECE;
+}
