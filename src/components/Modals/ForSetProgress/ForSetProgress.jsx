@@ -4,12 +4,12 @@ import { selectCurrentWorkout, selectUserId } from '../../../redux/selectors'
 import { useSetUserProgressMutation, useSetUserWorkoutCompletedMutation } from '../../../redux/services/usersApi'
 import { onChange, setProgressToObj } from './hooks'
 
-import { ButtonForEverything } from '../../ButtonForEverything'
+import { ButtonForClick } from '../../ButtonForClick'
 import { Input } from '../../Input'
 
 import style from './ForSetProgress.module.scss'
 
-const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setComplete }) => { 
+const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setComplete }) => {
 
 	const modalRef = useRef()
 	const progress = {}
@@ -19,12 +19,12 @@ const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setCo
 
 	const workoutId = useSelector(selectCurrentWorkout)
 	const userId = useSelector(selectUserId)
-	
+
 	const [setUserProgress] = useSetUserProgressMutation()
 	const [setUserWorkoutCompleted] = useSetUserWorkoutCompletedMutation()
 
-  	const submitWorkoutStatus = async (completed) => {
-		await setUserWorkoutCompleted({userId, courseName, workoutId, completed})
+	const submitWorkoutStatus = async (completed) => {
+		await setUserWorkoutCompleted({ userId, courseName, workoutId, completed })
 			.then((result) => {
 				console.log(result)
 			})
@@ -49,7 +49,7 @@ const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setCo
 			})
 	}
 
-  	const setAllProgress = () => {
+	const setAllProgress = () => {
 		if (!Object.keys(progress).length)
 			return setSubmitted(true)
 
@@ -58,22 +58,22 @@ const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setCo
 		setProgressToObj('userId', userId, info)
 		setProgressToObj('progress', progress, info)
 
-		submitProgress(info)	
-			
+		submitProgress(info)
+
 		setVisible(false)
-			
-  	}
-  
-  return (
-    <div className={style.wrapper} onClick={() => { setVisible(!visible) }} ref={modalRef} >
-		<div className={style.blockprogress} onClick={(e) => e.stopPropagation()}>
-			<h2 className={style.blockprogress__title}>Мой прогресс</h2>
+
+	}
+
+	return (
+		<div className={style.wrapper} onClick={() => { setVisible(prev => !prev) }} ref={modalRef} >
+			<div className={style.blockprogress} onClick={(e) => e.stopPropagation()}>
+				<h2 className={style.blockprogress__title}>Мой прогресс</h2>
 				<div className={style.blockprogress__box}>
 					{exercises.map((exercise, i) => {
 						const maxAmount = exercise.amount
 						return (
 							<label key={i} className={style.blockprogress__box_text}>
-							{`Сколько раз вы сделали ${exercise.name.split('(')[0].toLowerCase()}?`}
+								{`Сколько раз вы сделали ${exercise.name.split('(')[0].toLowerCase()}?`}
 								<Input
 									type={'number'}
 									uniqueClass={style.input}
@@ -95,10 +95,10 @@ const ModalForSetProgress = ({ visible, setVisible, exercises, courseName, setCo
 						)
 					})}
 				</div>
-				<ButtonForEverything text={'Отправить'} onClick={setAllProgress}/>
-		</div>			
-    </div>
-  )
+				<ButtonForClick text={'Отправить'} onClick={setAllProgress} />
+			</div>
+		</div>
+	)
 }
 
 export default ModalForSetProgress

@@ -10,34 +10,8 @@
     display: flex;
     justify-content: space-between;
     margin: 30px 0 0 0;
+    align-items: center;
 }
-
-
-// .user {
-//     width: 304px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     gap: 40px;
-
-
-//     &__data {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 20px;
-
-//         &_text {
-//             margin: 0;
-//             padding: 0;
-//         }
-//     }
-
-//     &__button {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 14px;
-//     }
-// }
 
 .course {
     display: flex;
@@ -53,13 +27,10 @@
         justify-content: flex-start;
         font-size: 48px;
     }
+
+    &__text {
+        display: flex;
+        font-size: 32px;
+        margin-top: 15px;
+    }
 }
-
-// .link {
-//     transform: translate(-340px, 460px);
-// }
-
-// .chooseData {
-//     width: 50%;
-//     height: 50%;
-// }

@@ -16,23 +16,23 @@ export default function Main() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-		const localId = localStorage.getItem('userID')
-		const localEmail = localStorage.getItem('userEmail')
-		if (!localId || !localEmail) return
-		dispatch(setLogin({ userId: localId, email: localEmail }))
+        const localId = localStorage.getItem('userID')
+        const localEmail = localStorage.getItem('userEmail')
+        if (!localId || !localEmail) return
+        dispatch(setLogin({ userId: localId, email: localEmail }))
     }, [dispatch])
-    
+
     const navigate = useNavigate()
 
-	const handleEnter = () => {
+    const handleEnter = () => {
         navigate('/login')
-	};
+    };
 
     const { data, isLoading } = useGetCoursesQuery()
 
     if (isLoading) return console.log('Загрузка')
-	const course = Object.keys(data)
-    
+    const course = Object.keys(data)
+
     return (
         <div className={style.wrapper}>
             <header className={style.header}>
@@ -46,9 +46,9 @@ export default function Main() {
                 </div>
                 <img src={sticker} alt='sticker' />
             </div>
-            <CardsBox course={course} thisPage={'main'}/>
+            <CardsBox course={course} thisPage={'main'} />
             <footer className={style.footer}>
-                <ButtonForScroll/>
+                <ButtonForScroll />
             </footer>
         </div>
     )

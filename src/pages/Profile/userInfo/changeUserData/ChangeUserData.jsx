@@ -1,25 +1,25 @@
 import { useState } from 'react'
 
 import { ModalForChangeData } from '../../../../components/Modals/ForChangeData'
-import { ButtonForEverything } from '../../../../components/ButtonForEverything'
+import { ButtonForClick } from '../../../../components/ButtonForClick'
 
 import style from './ChangeUserData.module.scss'
 
-const ChangeUserData = () => { 
+const ChangeUserData = () => {
 
     const [visibleLogin, setVisibleLogin] = useState(false)
     const [visiblePas, setVisiblePas] = useState(false)
 
-    const handleOpenModalForLogin = () => { 
+    const handleOpenModalForLogin = () => {
         setVisibleLogin(!visibleLogin)
     }
-    const handleOpenModalForPas = () => { 
+    const handleOpenModalForPas = () => {
         setVisiblePas(!visiblePas)
     }
 
     return (
         <div className={style.wrapper}>
-            {!visibleLogin && <ButtonForEverything
+            {!visibleLogin && <ButtonForClick
                 text={'Редактировать логин'}
                 onClick={handleOpenModalForLogin}
             />}
@@ -28,7 +28,7 @@ const ChangeUserData = () => {
                 visible={visibleLogin}
                 setVisible={setVisibleLogin}
             />}
-            {!visiblePas && <ButtonForEverything
+            {!visiblePas && <ButtonForClick
                 text={'Редактировать пароль'}
                 onClick={handleOpenModalForPas}
             />}
@@ -38,7 +38,7 @@ const ChangeUserData = () => {
                 setVisible={setVisiblePas}
             />}
         </div>
-    ) 
+    )
 }
 
 export default ChangeUserData

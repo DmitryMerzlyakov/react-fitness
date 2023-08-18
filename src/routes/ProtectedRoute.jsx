@@ -10,6 +10,6 @@ const ProtectedRoute = ({ redirectPath = '/login' }) => {
 	}
 
 	return <Outlet />
-};
+}
 
 export default ProtectedRoute

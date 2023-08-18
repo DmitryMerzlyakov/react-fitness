@@ -32,6 +32,21 @@ export const usersApi = createApi({
 				body: body.completed,
 			}),
 			invalidatesTags: ["Status"],
+		}),
+		addNewUser: build.mutation({
+			query: (body) => ({
+				url: `users/${body.userId}.json`,
+				method: "POST",
+				body: body.data,
+			}),
+		}),
+		addNewCourse: build.mutation({
+			query: (body) => ({
+				url: `users/${body.userId}/courses/${body.courseName}.json`,
+				method: "PUT",
+				body: body.data,
+			}),
+			invalidatesTags: ["Course"],
 		})
 	}),
 });
@@ -41,4 +56,6 @@ export const {
 	useSetUserProgressMutation,
 	useSetUserWorkoutCompletedMutation,
 	useGetUserProgressQuery,
+	useAddNewCourseMutation,
+	useAddNewUserMutation
 } = usersApi;

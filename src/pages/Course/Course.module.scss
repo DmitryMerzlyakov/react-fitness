@@ -11,8 +11,22 @@
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
+    &__image {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text {
+        position: absolute;
+        color: #000;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-size: 64px;
+        line-height: 72px;
+        margin-left: 20px;
+        transform: translate(10%, 190%);
+    }
+
+
 }
 
 .top {
@@ -33,7 +47,6 @@
     justify-content: space-between;
 
     &__list {
-        // margin: 7px;
         padding-left: 25px;
     }
 

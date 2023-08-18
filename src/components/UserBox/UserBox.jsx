@@ -15,7 +15,7 @@ const UserBox = () => {
     const [visible, setVisible] = useState(false)
 
     const handleVisible = () => {
-        setVisible(!visible)
+        setVisible(prev => !prev)
     }
 
     const hadleExit = () => {
@@ -26,20 +26,20 @@ const UserBox = () => {
 
     return (
         <>
-        <div className={style.wrapper}>
-            <div className={style.user}>
-                <svg className={style.user__avatar} alt='avatar'>
-                    <use xlinkHref={`${sprite}#icon-avatar`}></use>
-                </svg>
-                <p>{user}</p>
-                <button className={style.user__button} onClick={handleVisible}>
-                    <svg alt='dropdown' className={style.user__button_dropdown}>
-                        <use xlinkHref={`${sprite}#icon-dropdown`}></use>
+            <div className={style.wrapper}>
+                <div className={style.user}>
+                    <svg className={style.user__avatar} alt='avatar'>
+                        <use xlinkHref={`${sprite}#icon-avatar`}></use>
                     </svg>
-                </button>
+                    <p>{user}</p>
+                    <button className={style.user__button} onClick={handleVisible}>
+                        <svg alt='dropdown' className={style.user__button_dropdown}>
+                            <use xlinkHref={`${sprite}#icon-dropdown`}></use>
+                        </svg>
+                    </button>
+                </div>
+                {visible && <button className={style.exit} onClick={hadleExit}>Выход</button>}
             </div>
-        {visible && <button className={style.exit} onClick={hadleExit}>Выход</button>}
-        </div>
         </>
     )
 }
